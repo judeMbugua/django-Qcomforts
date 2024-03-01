@@ -1,0 +1,904 @@
+
+html{
+    background-color: rgb(255, 255, 255);
+}
+
+.nav-container{
+  width: 100vw;
+  height: 6rem;
+  background-color: rgb(118, 110, 110);
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  top: 0;
+  position: fixed;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  z-index: 1;
+
+}
+
+#webName{
+  margin-top: -4.3rem;
+  margin-left: 10rem;
+  font-size:2rem;
+  font-style:italic ;
+  letter-spacing: 5px;
+  position: absolute;
+}
+
+#logo{
+  height: 6rem;
+  width: 6rem;
+  background-color:rgb(118, 110, 110) ;
+  margin-left: 3rem;
+}
+
+
+ul{
+  list-style: none;
+  align-content:center ;
+  display: inline-flex;
+  margin-left: 18rem;
+ 
+}
+
+li a{
+  color: black;
+      
+}
+
+ul li{
+  font-size: 1.23rem;
+  color: black;
+  margin-left: 3rem;
+}
+
+
+.contact_btn{
+    background-color: inherit;
+    border: none;
+}
+
+#acc_icon{
+  position: absolute;
+  margin-left: 22.6rem;
+  margin-top: 0rem;
+}
+
+#accLink{
+  margin-left: 8rem;
+}
+
+#cart_count{
+    margin-left: 39rem;
+    margin-top: -.8rem;
+    position: absolute;
+    font-size: 2rem;
+}
+
+#cart_disp{
+    margin-left: 37rem;
+    margin-top: 1rem;
+    position: absolute;   
+}
+
+#acc_name{
+    position: absolute;
+    margin-top: 2rem;
+    margin-left: 32rem;
+}
+
+/* BODY STYLING START */
+.body-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(243, 243, 243);
+    margin-top: 30px;
+
+}
+
+
+/*  SECTION TWO STYLING*/
+.sec-1{
+    width: 100vw;
+    height: 35rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 2.12rem;
+
+}
+
+.slogan-box{
+    height: 5rem;
+    width: 49rem;
+    background-color: rgba(230, 223, 223, 0.4);
+    margin-left: 23rem;
+    margin-top: 7rem;
+    margin-left: 12rem;
+    position: absolute;
+    text-align: center;
+    opacity: .9;
+}
+
+#slogan_text{
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:2rem;
+}
+
+@keyframes dis {
+    0% {opacity: 1;}
+    25% {opacity: .75;}
+    50% {opacity: .25;}
+    100% {opacity: 0;}
+  }
+
+#dis_word{
+    animation-name: dis;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;  
+}
+
+.btn_box{
+    height: 13rem;
+    width: 25rem;
+    background-color: rgba(230, 223, 223, 0.4);
+    margin-left: 23rem;
+    margin-top: 14rem;
+    position: absolute;
+}
+
+#home_text{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 1.2rem;
+    letter-spacing: 5px;
+}
+
+#shop-btn{
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    background-color: rgba(243, 232, 232, 0.4);
+    letter-spacing: 2px;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-left: 6.1rem;
+
+}
+
+.link{
+    color: black;
+    text-decoration: none;
+}
+
+
+/*  SECTION TWO STYLING*/
+
+#offer_header{
+    height: 4rem;
+    width: 12rem;
+    background-color: rgb(21, 26, 27);
+    text-align: center;
+    margin-left: 29rem;
+    border-radius: 1rem;
+    margin-top: 10px;
+
+}
+
+#offer_text{
+    padding-top: 1.2rem;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    color: white;
+    
+}
+
+.sec-2{
+    height:100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    margin-top: .7rem;
+    border-radius: 2rem;
+}
+
+#deals_text{
+    font-family: "IM Fell Great Primer", serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    font-style: normal;
+    height: 4rem;
+    width: 18rem;
+    background-color: gray;
+    margin-left: 27rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    position: absolute;
+    padding-top: 15px;
+    padding-inline-start: 13px;
+}
+
+.grid-container{
+    margin-top: .1rem;
+    display: grid;
+    row-gap: 3px;
+    width: 100vw;
+    height: fit-content;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.g-item{
+    margin-top: 6rem;
+    height: 27rem;
+    width: 23rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.offer-image{
+    height: 20rem;
+    width: 20rem;
+    position: relative;
+    
+
+}
+
+.deal-image{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 22rem;
+    width: 22rem;
+   
+}
+
+
+.deal-info{
+    height: 3.8rem;
+    width: 20rem;
+    background-color: gray;
+    border-radius: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 2.8px;
+    text-align: center;
+    border-top-style: none;
+    
+}
+
+.deal-text{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 15px;
+    padding-top: 3px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 3px;
+
+}
+
+#name{
+    padding-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.g-item :hover{
+    cursor: pointer;
+    background-color: rgb(81, 62, 62);
+    color: rgb(177, 135, 135);
+    opacity: .6;
+
+
+}
+
+
+/*----SHOP PAGE STYLING*/
+
+.shop-body-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(248, 248, 248);
+    margin-top: 30px;
+    padding-top: 5rem;
+}
+
+
+.filter-sec{
+    
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    height: 10rem;
+    width: 65rem;
+    margin-left: 4rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+#filter_text{
+    text-align: center;
+    font-family: "Varela Round",sans-serif;
+    font-size: 1.3rem;
+    margin-top:-1.2rem;
+
+}
+
+
+.filterOptions-container{
+    display: flex;
+
+}
+
+.filterOptions-container select{
+    margin-left: 3rem;
+    margin-top: 2rem;
+    width:13rem;
+    border-radius: 1rem;
+    padding-inline-start: 10px;
+}
+
+.filterOptions-container p{
+
+    font-family: "IM Fell Great Primer", serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    font-style: normal;
+    border-radius: 1rem;
+    position: absolute;
+}
+
+#color-text{
+    margin-left: 40rem;
+}
+
+#size-text{
+    margin-left: 25rem;
+}
+
+#price-text{
+    margin-left: 8rem;
+}
+
+
+
+#filter_btn{
+    margin-left: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+    margin-top: 2.2rem;
+    border-radius: .5rem;
+   
+}
+
+
+
+#shirt_header{
+    height: 4rem;
+    width: 18rem;
+    font-size: 1.5rem;
+    position: absolute;
+    font-weight: 500;
+    line-height: 15px;
+    border-radius: 1rem;
+    padding-top: 1.5rem;
+    margin-left: 25rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+
+.sec-shirt{
+    height:fit-content;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    padding-inline-start: 8px;
+    border-radius: 2rem;
+    
+
+}
+
+
+.shirt-item{
+    margin-top: 6rem;
+    height: fit-content;
+    width: 23rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   
+}
+
+.shirt-info{
+    height: max-content;
+    width: fit-content;
+    background-color: inherit;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-top: 2.8px;
+    text-align: center;
+    
+}
+
+.shirt-name{
+    text-align: center;
+    overflow-wrap:break-word ;
+    font-family: "DM Sans",sans-serif;
+}
+
+.shirt-price{
+    text-align: left;
+    margin-left: 8rem;
+    overflow-wrap:break-word ;
+    font-family: "DM Sans",sans-serif;
+    padding-bottom: 1rem;
+    font-weight: bolder;
+  
+}
+
+
+.shirt-old-price{
+    text-align: left;
+    margin-left: 2.5rem;
+    margin-top: 3px;
+    overflow-wrap:break-word ;
+    font-family: "DM Sans",sans-serif;
+    padding-bottom: 1rem;
+    font-weight: bolder;
+    position: absolute;
+    font-size: .8rem;
+    text-decoration: line-through;
+  
+}
+
+
+
+.shirt-cart{
+    margin-left: 3rem;
+    position: absolute;
+    border: none;
+
+  
+}
+
+.offer-banner{
+    height: 7rem;
+    width: 7rem;
+    position: absolute;
+
+}
+
+hr{
+    margin-top: 3rem;
+    border: 1px solid black;
+}
+
+
+.sec-hoodie{
+    height:fit-content;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    padding-inline-start: 8px;
+    border-radius: 2rem;
+    margin-top: -.6rem;
+    
+
+}
+
+
+
+/*POPUP VIEW WINDOW STYLING*/
+
+
+
+.view-popup {
+    margin-top: 1rem;
+    margin-left: 6rem;
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 60rem; 
+    height: 30rem; 
+    overflow: auto;
+    background-color: inherit;
+    background-color:inherit; 
+
+}
+
+
+.close {
+    color: #000000;
+    margin-right: 1rem;
+    font-size: 45px;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 57rem;
+}
+
+.close:hover,.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.view-image-container{
+    height:27rem;
+    width: 27rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-style: outset;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.view-image-container img{
+    height: inherit;
+    width: inherit;
+}
+
+
+.view-item-info{
+    height:27rem;
+    width: 28rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#view_item_name{
+
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 1.2rem; 
+    width: 20rem;
+    text-align: left;
+    height:8rem;
+    overflow-wrap: break-word;
+}
+
+
+.item-view-price{
+    text-align: left;
+    margin-left: 2.3rem;
+    overflow-wrap:break-word ;
+    font-family: "DM Sans",sans-serif;
+    margin-top: -4rem;
+    font-weight: bolder;
+
+  
+}
+
+
+.view-old-price{
+    text-align: left;
+    margin-left: 9.5rem;
+    margin-top: -3.8rem;
+    overflow-wrap:break-word ;
+    font-family: "DM Sans",sans-serif;
+    font-weight: bolder;
+    position: absolute;
+    font-size: .8rem;
+    text-decoration: line-through;
+    font-style: italic;
+  
+}
+
+
+
+.view-item-discount{
+    text-align: left;
+    margin-left: 14.5rem;
+    margin-top: -2.5rem;
+    overflow-wrap:break-word ;
+    font-family: "DM Sans",sans-serif;
+    font-weight: bolder;
+    position: absolute;
+    font-size: .9rem;
+
+}
+
+#view_color{
+    text-align: left;
+    margin-left: 2.5rem;
+    margin-top: -.1rem;
+    overflow-wrap:break-word ;
+    font-family: "DM Sans",sans-serif;
+    font-weight: 300;
+    position: absolute;
+    font-size: 1.3rem;
+}
+
+#view_color_disp{
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: green;
+    border-radius: 2rem;
+    margin-left: 7rem;
+    margin-top: 1.2rem;
+}
+
+#item_view_size{
+    text-align: left;
+    margin-left: 2.7rem;
+    margin-top: 1rem;
+    overflow-wrap:break-word ;
+    font-family: "DM Sans",sans-serif;
+    font-weight: 300;
+    position: absolute;
+    font-size: 1.1rem;
+}
+
+#view_select{
+    height: 2rem;
+    margin-left: 2.2rem;
+    margin-top: 3rem;
+    width:13rem;
+    border-radius: 1rem;
+    padding-inline-start: 10px;
+}
+
+
+#view_quantity{
+    text-align: left;
+    margin-left: 2.7rem;
+    margin-top: 1rem;
+    overflow-wrap:break-word ;
+    font-family: "DM Sans",sans-serif;
+    font-weight: 300;
+    position: absolute;
+    font-size: 1.1rem;
+}
+
+#view_quantity_input{
+    height: 2rem;
+    margin-left: 2.2rem;
+    margin-top: 3rem;
+    width:13rem;
+    border-radius: 1rem;
+    padding-inline-start: 10px;
+}
+
+.buy-now-btn{
+    position: absolute;
+    margin-top: 7rem;
+    width: 10rem;
+    margin-left: -8rem;
+
+}
+
+.view-item-cart{
+    position: absolute;
+    margin-top: 7.1rem;
+    width: 5rem;
+    margin-left: 3rem;  
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.view-offer-banner{
+    height: 7rem;
+    width: 7rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    position: absolute;
+
+}
+
+
+/*POPUP CONTACT WINDOW STYLING*/
+
+
+.contact-popup {
+    margin-top: 8rem;
+    margin-left: 9rem;
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 50rem; 
+    height: 22rem; 
+    background-color: rgb(124, 111, 111);
+    
+
+}
+
+
+
+.close-contact{
+    color: #000000;
+    margin-right: 1rem;
+    margin-top: -1rem;
+    font-size: 45px;
+    font-weight: bold;
+    position: relative;
+    margin-left: 47rem;
+
+}
+
+
+.close-contact:hover,.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contact-form-container{
+    margin-top: -1.6rem;
+    margin-left: 2rem;
+    position: absolute;
+    width: 45rem; 
+    height: 18rem; 
+
+
+}
+
+#contact_text{
+    margin-left: 16rem;
+    font-size: 2rem;
+    font-family: "Bebas Neue",sans-serif;
+    position: absolute;
+    margin-top: -1rem;
+}
+
+.contact-form-container form input{
+    margin:.5rem ;
+    margin-left: 15rem;
+    border-radius: 5px;
+    padding-inline-start: 10px;
+}
+
+.contact-form-container form{
+    margin-top: 1.5rem;
+}
+
+#contact_message{
+    height: 4rem;
+    margin-left: 15rem;
+    border-radius: 15px;
+    padding-inline-start: 10px;
+    overflow-wrap: break-word;
+    overflow: auto;
+}
+
+#contact_btn{
+    width: 8rem;
+    margin-top: 5.5rem;
+    margin-left: -13rem;
+    position: absolute;
+}
+
+
+/*----REGISTER PAGE STYLING*/
+
+.register-body-container{
+    width: 100vw;
+    height: 100vh;
+    background-color:inherit;
+    margin-top: -4rem;
+    padding-top: 5rem;
+}
+
+.reg-form-container{
+    width: 40rem;
+    height: 30rem;
+    float: right;
+    background-color: gray;
+}
+
+
+.reg-image-container{
+    width: 35rem;
+    height: 30rem;
+    float: left;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+
+.reg-form-container form{
+    margin-top: 8rem;
+    margin-left: 10rem;
+}
+
+.reg-form-container form input{
+    width: 16rem;
+}
+
+.reg_btn{
+    width: 12rem;
+    margin-left: 2rem;
+}
+
+/*hide the auto created help text by django*/
+.form-group small{
+    display: none;
+}
+
+
+
+
+/*----LOGIN PAGE STYLING*/
+
+.login-body-container{
+    width: 100vw;
+    height: 100vh;
+    background-color:inherit;
+    margin-top: -4rem;
+    padding-top: 5rem;
+    
+}
+
+#logo_login{
+    height: 6rem;
+    width: 6rem;
+    background-color:none;
+    position: absolute;
+    margin-top: 9rem;
+    margin-left: 49rem;
+  }
+
+.log-form-container{
+    margin-top: 5rem;
+    width: 40rem;
+    height: 30rem;
+    float: right;
+    background-color: gray;
+}
+
+
+
+.log-image-container{
+    width: 35rem;
+    height: 30rem;
+    float: left;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+
+.log-form-container form{
+    margin-top: 11rem;
+    margin-left: 12rem;
+}
+
+.log-form-container form input{
+    width: 16rem;
+    margin: -.3rem;
+}
+
+.log_btn{
+    width: 10rem;
+    margin-top: -.5rem;
+    margin-bottom: .5rem;
+    margin-left: 3rem;
+}
+
+
+.logout-form{
+    width: 25rem;
+    height: 15rem;
+    text-align: center;
+    margin-right: 13rem;
+    position: absolute;
+
+}
+
+#loggedOut_text{
+    font-size: 1.3rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.25) 0px -12px 30px, rgba(0, 0, 0, 0.25) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-weight: 500;
+    font-family: "Bebas Neue" sans serif;
+
+}

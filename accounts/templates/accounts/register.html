@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}quiet-register{% endblock %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div class="register-body-container">
+
+
+    <div class="reg-image-container" style="background-image: url({% static 'images/reg-cover.jpg' %})" >   
+    </div>
+
+        <div class="reg-form-container">
+            <form class="reg-form" action="" method="post">
+                {% csrf_token %}
+                {{form|crispy}}
+                <button id="btn_" type="submit" name="save" class="btn btn-success reg_btn">Register</button>
+                <p id="has_acc">Aready have an account? <a href="/login">Log in</a> </p>
+            </form>
+        </div>
+
+</div>
+
+{% endblock  %}

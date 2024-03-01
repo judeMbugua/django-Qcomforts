@@ -1,0 +1,132 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block title %}
+Quiet-add-cart
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="shop-body-container">
+
+
+    <div class="product-info" >
+    
+        {% if context.product.offer == "yes" %}
+            <img src="{% static 'images/offer.png' %} " alt="null" class="view-offer-banner">
+        {% endif %}
+
+        <div class="view-image-container">
+            <img src="{{context.product.image.url}}" alt="null" id="item_image">
+        </div>
+
+        <div class="view-item-info">
+            <p id="view_item_name">{{context.product.name}}</p>
+
+            {% if context.product.offer == "yes" %}
+                <p class="view-old-price" id="old_price"> {{ context.product.old_price }} </p>
+                <p class="view-item-discount" id="discount"> -{{ context.discount }}% </p>
+            {% endif %}
+            <p class="item-view-price" id="price">KES.{{context.product.price}}</p>
+            <p id="item_view_size">size</p>
+            <select id="view_select" class="select-view">
+                <option value="small">small</option>
+                <option value="large">large</option>
+                <option value="larger">larger</option>
+              </select>
+
+            <p id="view_quantity">quantity</p><input  type="text" id="view_quantity_input" value="1">
+
+            {% if context.product.id in context.inCart %}
+                <a {% if request.user.is_authenticated %}
+                href="{% url "checkout" %}"
+                {% else %}]
+                    href="{% url "login" %}"
+                {% endif %}
+                id="toPaylink"><button class="btn btn-success buy-now-btn">Check Out</button></a>
+            {% else %}
+            <a href="{% url "shop" %}"><button class="btn btn-secondary buy-now-btn">Back</button>
+             {% endif %}
+            {% if request.user.is_authenticated and context.product.id not in context.inCart %}
+                <button class="view-item-cart" id='addCart_btn'  value = {{ context.product.id }} ><i class="fa-solid fa-cart-shopping"></i></button>
+            {% elif request.user.is_authenticated and context.product.id in context.inCart %}
+            <button class=" btn btn-danger view-item-rmv" data-index={{ context.product.id }} >Remove</button>
+            {% else %}
+            <button class="view-item-cart"> <a href=" {% url "login" %} " id="cart_login">Login</a> </button>
+            {% endif %}
+        </div>
+        
+    </div>
+
+</div>
+
+<script>
+    //add to cart
+$(document).on('click', '#addCart_btn', function(e){
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: '{% url "cart_add" %}',
+        data : {
+            product_id : $('#addCart_btn').val(), //get the value of the add to cart button which is the product's id
+            product_qty : $('#view_quantity_input').val(), //get entered
+            product_size : $('#view_select option:selected').text(), //get selected size from selected
+            csrfmiddlewaretoken : '{{ csrf_token }}',
+            action : 'post'
+
+        },
+
+        success: function(json){
+            alert("item added to cart");
+            window.location.href = " {% url "shop" %}";
+        },
+
+        error : function(xhr,errmsg,err){
+            
+        }
+
+
+    });
+})
+
+
+
+//remove item
+    //to remove item from cart
+    $(document).on('click', '.view-item-rmv', function(e){
+        e.preventDefault();
+        //grab the product.id
+        var productId = $(this).data("index"); //get the  value of the data-index of the current clicked button
+
+        $.ajax({
+            type: "POST",
+            url: '{% url "cart_remove" %}',
+            data : {
+                product_id :  $(this).data("index"), //get the product's id from the clicked btn data index
+                csrfmiddlewaretoken : '{{ csrf_token }}',
+                action : 'post'
+    
+            },
+    
+            success: function(json){
+                alert("item removed from cart");
+               location.reload()
+            },
+    
+            error : function(xhr,errmsg,err){
+                
+            }
+    
+    
+        });
+    })
+        
+    
+</script>
+
+{% endblock %}
+
+

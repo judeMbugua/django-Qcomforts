@@ -1,0 +1,129 @@
+{% extends "main/base.html" %} {% block title %}quiet-cart summary{% endblock %}
+{% load static %}
+
+{% block content %}
+
+{% if not context.cart_products %}
+
+    <div class="cart-summary-body-container">
+        <p>empty cart this one</p>
+    </div>
+
+{% else %}
+
+{% for product in context.cart_products  %}
+<div class="cart-summary-body-container">
+   <div class="cart-product-info" >
+    {% if product.offer == "yes" %}
+        <img src="{% static 'images/offer.png' %} " alt="null" class="view-offer-banner">
+    {% endif %}
+
+    <div class="view-image-container">
+        <img src="{{product.image.url}}" alt="null" id="item_image">
+    </div>
+
+    <div class="view-item-info">
+        <p id="view_item_name">{{product.name}}</p>   
+        {% for key,val in context.offers.items %}
+            {% if key == product.id %}
+            <p class="view-old-price" id="old_price"> {{ product.old_price }} </p>
+            <p class="view-item-discount" id="discount"> -{{ val }}% </p>
+        {% endif %}
+        {% endfor %}
+        <p class="item-view-price" id="price">KES.{{product.price}}</p>
+  
+        <p id="item_view_size">size</p>
+            <select id="view_select{{product.id}}" class="select-view" >
+                
+            {% for key,value in context.quant.items %}
+            {% if key == product.id|slugify %}
+                <option selected> {{ value.size }} </option>
+
+                <option value="small">small</option>
+                <option value="large">large</option>
+                <option value="larger">larger</option>
+            </select>
+            <p id="view_quantity">quantity</p><input  type="text" id="view_quantity_input" class="qty-update{{product.id}}" value="{{value.qty}}">
+            {% endif %}
+            {% endfor %}
+            <a {% if request.user.is_authenticated %}
+            href="{% url "checkout" %}"
+         {% else %}]
+             href="{% url "login" %}"
+         {% endif %}
+          id="toPaylink"><button class="btn btn-success buy-now-btn">Check Out</button></a>
+        <button class="btn btn-danger rm-item-cart" data-index="{{ product.id }}">Remove </button>
+         <button class="btn btn-secondary update-cart" data-index="{{ product.id }}">Update</button>
+    </div>
+ 
+</div>
+</div>
+{% endfor %}
+{% endif %}
+
+<script>
+    //to remove item from cart
+    $(document).on('click', '.rm-item-cart', function(e){
+        e.preventDefault();
+        //grab the product.id
+        var productId = $(this).data("index"); //get the  value of the data-index of the current clicked button
+
+        $.ajax({
+            type: "POST",
+            url: '{% url "cart_remove" %}',
+            data : {
+                product_id :  $(this).data("index"), //get the product's id from the clicked btn data index
+                csrfmiddlewaretoken : '{{ csrf_token }}',
+                action : 'post'
+    
+            },
+    
+            success: function(json){
+               location.reload()
+            },
+    
+            error : function(xhr,errmsg,err){
+                
+            }
+    
+    
+        });
+    })
+
+
+    //update cart
+    $(document).on('click','.update-cart',function(e){
+        e.preventDefault();
+        var prd_id =  $(this).data("index");
+
+        $.ajax({
+            type : "POST",
+            url : ' {% url "cart_update" %}',
+            data : {
+                prd_id : $(this).data("index"),
+                prd_size : $('#view_select' + prd_id + ' option:selected').text(),
+                prd_qty : $('.qty-update' + prd_id).val(),
+                csrfmiddlewaretoken : '{{ csrf_token }}',
+                action : 'post'
+            },
+
+            success: function(json){
+
+               location.reload()
+            },
+    
+            error : function(xhr,errmsg,err){
+                
+            }
+
+        })
+    })
+        
+        
+    </script>
+
+
+
+
+
+{% endblock %}

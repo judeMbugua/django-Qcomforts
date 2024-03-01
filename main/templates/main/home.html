@@ -1,0 +1,50 @@
+{%extends 'main/base.html' %}
+{% block title %}quiet home{% endblock %}
+{% load static %}
+
+
+
+{% block content %}
+
+    <div class="body-container">
+
+        <div class="sec-1" style="background-image: url({% static 'images/home_bg.jpg' %})">
+            
+        <div class="slogan-box">
+            <p id="slogan_text">Quiet Comforts, Where Anxiety <span id="dis_word">Disappears</span> in Style.</p>
+        </div>
+
+        <div class="btn_box">
+            <p id="home_text">CHECK US OUT</p>
+            <button id="shop-btn"> <a class="link" href=" {% url "shop" %} ">Shop Now</a> </button>
+        </div>
+
+        </div>
+
+        <div id="offer_header"><p id="offer_text">SPECIAL OFFERS</p></div> 
+
+        <div class="sec-2">
+            <p id="deals_text">HOT DEALS FOR GRABS</p>
+
+            <div class="grid-container">
+                {% for clothe in clothes  %}
+                {% if  clothe.offer == "yes" %}
+                <div class="g-item">
+                    <a href="{% url "productInfo" clothe.id %}">
+                    <div class="deal-image" style="background-image: url({{clothe.image.url}})" >   
+                    </div>
+                    
+                    <div class="deal-info">
+                        <p class="deal-text" id="name">{{clothe.name}}</p>
+                        <p class="deal-text" id="to_cart">Add To Cart</p>
+                    </div>
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+    </div>
+</div>
+
+{% endblock %}

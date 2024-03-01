@@ -1,0 +1,173 @@
+{% extends "main/base.html" %}
+{% block title %}quiet shop{% endblock %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="shop-body-container">
+
+
+
+
+    <div class="filter-sec">
+        <p id="filter_text">Filter Items</p>
+
+
+        <form action="/shop/" method="POST">
+                {% csrf_token %}
+            <div class="filterOptions-container">
+                <p id="color-text">Category</p>
+                <select id="color_text" name="filterColor">
+                    <option value="All">All</option>
+                    <option value="white">white</option>
+                    <option value="black">black</option>
+                    <option value="red">red</option>
+                    <option value="green">green</option>
+                    <option value="blue">blue</option>
+                    <option value="orange">orange</option>
+                    <option value="brown">brown</option>
+                  </select>
+        
+                  <p id="size-text">Size</p>
+                  <select id="size_text" name="filterSize">
+                    <option value="small">small</option>
+                    <option value="medium">medium</option>
+                    <option value="large">large</option>
+                    <option value="extra-large">extra-large</option>
+                  </select>
+                  <p id="price-text">Color</p>
+                  <select id="price_tex" name="filterCat">
+                    <option value="All">All</option>
+                    <option value="black">Hoodie</option>
+                    <option value="shirt">Shirt</option>
+                  </select>
+    
+                  <button type="submit" name="filter" value="filter" class="btn btn-success" id="filter_btn">Filter</button>
+        </form>
+              
+        </div>
+
+
+    </div>
+
+
+<!--SHIRTS CONTAINER SECTION-->
+
+    <div  class="sec-shirt">
+
+        <div id="shirt_header"><p id="shirt_text">Quiet Shirts</p></div> 
+
+        <div class="grid-container">
+            {% for shirt in context.clothes %}
+                {% if shirt.category == "shirt" %}
+                    <div class="shirt-item">
+                        {% if shirt.offer == "yes" %}
+                        <img src="{% static "images/offer.png" %} " alt="null" class="offer-banner">
+                       {% endif %}
+
+                      <a href="{% url 'productInfo' shirt.id %}">  <div class="deal-image" style="background-image: url({{shirt.image.url}})" >   
+                        </div> </a>
+
+                        <div class="shirt-info">
+                            <p class="shirt-name" id="name"> {{ shirt.name }} .</p>
+                            <button class="shirt-cart"> <a href=" {% url 'productInfo' shirt.id %} "><i class="fa-solid fa-cart-shopping"></i></a> </button>
+                            <p class="shirt-price" id="price">KES. {{ shirt.price }}</p>
+               
+                            
+                        </div>
+
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+
+    
+
+
+
+        </div>
+</div>
+
+
+<hr>
+
+<!--HOODIES CONTAINER SECTION-->
+
+<div  class="sec-hoodie">
+
+    <div id="shirt_header"><p id="shirt_text">Quiet Hoodies</p></div> 
+
+    <div class="grid-container">
+        {% for hoodie in context.clothes  %}
+            {% if hoodie.category == "hoodie" %}
+            <div class="shirt-item">
+                {% if hoodie.offer == "yes" %}
+                <img src="{% static "images/offer.png" %} " alt="null" class="offer-banner">
+               {% endif %}
+                <a href=" {% url 'productInfo' hoodie.id %} "> <div class="deal-image" style="background-image: url({{hoodie.image.url}})" >   
+                </div> </a>
+            
+                <div class="shirt-info">
+                    <p class="shirt-name" id="name">{{ hoodie.name }}.</p>
+                    <button class="shirt-cart"> <a href=" {% url 'productInfo' hoodie.id %} "><i class="fa-solid fa-cart-shopping"></i></a> </button>
+                    <p class="shirt-price" id="price">KES.{{ hoodie.price }}</p>
+                </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+var modal2 = document.getElementById("contact-popup");
+
+
+
+
+
+var span2 = document.getElementsByClassName("close-contact")[0];
+
+
+
+
+
+span2.onclick = function() {
+    modal2.style.display = "none";
+  
+  }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal2.style.display = "none";
+  }
+}
+
+</script>
+
+
+</div>
+
+
+
+
+{% endblock content %}
+
+
+
+

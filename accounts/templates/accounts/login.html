@@ -1,0 +1,35 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}quiet-login{% endblock %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+
+<div class="login-body-container">
+
+
+    <div class="log-image-container" style="background-image: url({% static 'images/reg-cover.jpg' %})" >   
+    </div>
+                    <image
+            id="logo_login"
+            src="{% static 'images/logoremovebg.png' %} "
+            alt="null"
+          ></image>
+        <div class="log-form-container">
+
+            <form class="log-form" action="" method="post">
+                {% csrf_token %}
+                <input type="text" class="form-control" name="username" id="login_email" placeholder="Username"> <br>
+                <input type="password" class="form-control" name="password" id="login_pass"  placeholder="Password"> <br>
+                <button id="log_btn" type="submit" name="login" class="btn btn-success log_btn">Login</button>
+                <p id="no_acc">Don't have an account create one? <a href=" {% url "register" %} ">here</a> </p>
+            </form>
+        </div>
+
+</div>
+
+{% endblock  %}
