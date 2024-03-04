@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&v+v14p^_+fr4boj)$1*0pih+$ubyw1cztt*f$7tbzdz1qehp1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app"] #allow hosts with this extension
 
 
 # Application definition
@@ -84,8 +84,12 @@ WSGI_APPLICATION = 'qComforts.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
