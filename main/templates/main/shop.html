@@ -10,43 +10,6 @@
 
 
 
-    <div class="filter-sec">
-        <p id="filter_text">Filter Items</p>
-
-
-        <form action="/shop/" method="POST">
-                {% csrf_token %}
-            <div class="filterOptions-container">
-                <p id="color-text">Category</p>
-                <select id="color_text" name="filterColor">
-                    <option value="All">All</option>
-                    <option value="white">white</option>
-                    <option value="black">black</option>
-                    <option value="red">red</option>
-                    <option value="green">green</option>
-                    <option value="blue">blue</option>
-                    <option value="orange">orange</option>
-                    <option value="brown">brown</option>
-                  </select>
-        
-                  <p id="size-text">Size</p>
-                  <select id="size_text" name="filterSize">
-                    <option value="small">small</option>
-                    <option value="medium">medium</option>
-                    <option value="large">large</option>
-                    <option value="extra-large">extra-large</option>
-                  </select>
-                  <p id="price-text">Color</p>
-                  <select id="price_tex" name="filterCat">
-                    <option value="All">All</option>
-                    <option value="black">Hoodie</option>
-                    <option value="shirt">Shirt</option>
-                  </select>
-    
-                  <button type="submit" name="filter" value="filter" class="btn btn-success" id="filter_btn">Filter</button>
-        </form>
-              
-        </div>
 
 
     </div>
@@ -78,6 +41,7 @@
                         </div>
 
                     </div>
+                    
                 {% endif %}
             {% endfor %}
 

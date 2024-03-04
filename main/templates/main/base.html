@@ -65,14 +65,14 @@
     <div class="contact-form-container">
       <p id="contact_text">Need Help?Contact Us</p>
 
-      <form action="" method="post">
+      <form  method="POST">
 
           {% csrf_token %}
 
-        <input type="text" id="contact_name"  placeholder="Name"> <br>
-        <input type="email" id="contact_email"  placeholder="Email"> <br>
-        <input type="text" id="contact_subject" placeholder="Subject"> <br>
-        <textarea name="" id="contact_message" cols="30" rows="5">Message</textarea>
+        <input type="text" name="name" id="contact_name"  placeholder="Name"> <br>
+        <input type="email" name="email"  id="contact_email"  placeholder="Email"> <br>
+        <input type="text" name="subject" id="contact_subject" placeholder="Subject"> <br>
+        <textarea name="msg" id="contact_message" cols="30" rows="5">Message</textarea>
         <button id="contact_btn" type="submit" class="btn btn-success">submit</button>
       </form>
     </div>

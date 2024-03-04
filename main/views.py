@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from accounts.views import signIn
 import random,string
 from django_daraja.mpesa.core import MpesaClient
+import smtplib, ssl
+
 
 
 
@@ -16,26 +18,45 @@ def home(response):
 
 
 def shop(request):
-    clicked = False
-    color = ""
-    size = ""
-    category = ""
-    if request.method == "POST":
-        clicked = True
-        color = request.POST.get("filterColor")
-        size = request.POST.get("filterSize")
-        category = request.POST.get("filterCat")
-          
+       
     cloth = Clothe.objects.all()
-    
+
     context = {
 		"clothes":cloth,
-		"clicked":clicked,
-		"color":color,
-		"size":size,
-		"category":category,
+
 	}
     return render(request,'main/shop.html',{"context":context})
+
+
+
+
+
+def sendEmail(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email_ = request.POST.get("email")
+        subject = request.POST.get("subject")
+        msg_ = request.POST.get("msg")
+    
+
+    # Import the email modules we'll need
+    from email.message import EmailMessage
+
+    msg = EmailMessage()
+    msg.set_content(msg_)
+
+    # me == the sender's email address
+    # you == the recipient's email address
+    msg['Subject'] = subject
+    msg['From'] = email_
+    msg['To'] = "judewanyagi@gmail.com"
+
+    # Send the message via our own SMTP server.
+    s = smtplib.SMTP('localhost')
+    s.send_message(msg)
+    s.quit()
+    
+    return render(request,"main/shop.html")
 
 
 
