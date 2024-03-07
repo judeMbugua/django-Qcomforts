@@ -45,16 +45,16 @@ statuses = (
 
 class Clothe(models.Model):
     User = models.ForeignKey(User, on_delete=models.CASCADE, related_name="clothe")
-    category = models.CharField(max_length=8, choices=item_categories)
+    category = models.CharField(max_length=30, choices=item_categories)
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to="itemsImages")
-    price = models.CharField(max_length=10)
+    price = models.CharField(max_length=30)
     desc = models.CharField(max_length=200)
-    color = models.CharField(max_length=8, choices=item_colors)
-    size = models.CharField(max_length=15, choices=item_sizes)
-    stockCount = models.CharField(max_length=5)
-    offer = models.CharField(max_length=8, choices=item_offer, default="No")
-    old_price = models.CharField(max_length=10, default=0)
+    color = models.CharField(max_length=30, choices=item_colors)
+    size = models.CharField(max_length=30, choices=item_sizes)
+    stockCount = models.IntegerField()
+    offer = models.CharField(max_length=30, choices=item_offer, default="No")
+    old_price = models.CharField(max_length=30, default=0)
 
     #shows category of objects in django admin dashboard
     def __str__(self):
@@ -66,12 +66,12 @@ class Order(models.Model):
     product = models.ForeignKey(Clothe, on_delete=models.CASCADE)
     customer = models.ForeignKey(User, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-    size = models.CharField(max_length=15)
+    size = models.CharField(max_length=30)
     address = models.CharField(max_length=100,null=True)
-    phone = models.CharField(max_length=20, default="")
-    order_id = models.CharField(max_length=20,null=True)
+    phone = models.CharField(max_length=30, default="")
+    order_id = models.CharField(max_length=100,null=True)
     status = models.CharField(max_length=150,choices=statuses,default="Pending")
-    tracking_no = models.CharField(max_length=20,null=True)
+    tracking_no = models.CharField(max_length=100,null=True)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     
