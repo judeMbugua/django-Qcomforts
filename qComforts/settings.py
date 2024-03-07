@@ -17,14 +17,10 @@ env = environ.Env(
 )
 
 
-env_file_path = Path('qComforts\\.env')
-if not env_file_path.exists():
-  raise ValueError(f"{env_file_path=} does not exists")
-
 
 
 # Take environment variables from .env file
-environ.Env.read_env(env_file_path)
+environ.Env.read_env()
 
 # False if not in os.environ because of casting above
 DEBUG = env('DEBUG')
