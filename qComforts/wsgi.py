@@ -15,4 +15,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'qComforts.settings')
 
 application = get_wsgi_application()
 
-app = application #this app is used as and extension by vercel (.vercel.app)
+
