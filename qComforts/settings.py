@@ -2,8 +2,8 @@
 
 from pathlib import Path
 import os
-
 import environ
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -52,7 +52,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = [".vercel.app","now.sh","127.0.0.1","localhost"] #allow hosts with this extension
+ALLOWED_HOSTS = ["*"] #allow hosts with this extension
 
 
 # Application definition
@@ -109,14 +109,7 @@ WSGI_APPLICATION = 'qComforts.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '6*6C-EDDFAG-6DFg3G*1cCbBcF3FfeEG',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '56526',
-    }
+    'default':dj_database_url.parse(env('DB_URL'))
 }
 
 
